@@ -4,46 +4,26 @@ import { ApiService } from './service/api.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+  styles: ['@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"'],
+  styleUrls: ['./app.component.css'
+]})
 export class AppComponent implements OnInit {
   names = [];
+
+ show: boolean = false;
   constructor(private apiService: ApiService) {
    }
 
    ngOnInit() {
-      this.names = this.apiService.showAllItems();
+     this.names = this.apiService.showAllItems();
+     console.log(this.names);
    }
-  addName(value: string) {
-    if (this.checkingInput(value)) {
-      return;
-    }
-    if (this.checkingForContaining(value)) {
-      return;
-    }
-    this.names.push(value);
-    this.apiService.storeList(this.names);
-  }
-  deleteName(name) {
-    this.names = this.names.filter(t => t !== name);
-    this.apiService.storeList(this.names);
+  isOpened() {
+    this.show = !this.show;
+    console.log(this.show);
   }
 
-  checkingForContaining(value: string) {
-    if (this.names.includes(value)) {
-      alert('This name already exists');
-      return true;
-    }
-    return false;
-  }
 
-  checkingInput(value: string): boolean {
-    if (value.length === 0) {
-      alert('Enter your name!');
-      return true;
-    }
-    return false;
-  }
 }
 
 

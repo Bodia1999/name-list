@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  listOfNames = [];
+  listOfNames = new Array();
   constructor() { }
 
   storeList(list: object) {
@@ -13,10 +13,12 @@ export class ApiService {
   }
 
   showAllItems() {
+    this.listOfNames = new Array;
     let names = JSON.parse(localStorage.getItem('names'));
     for (const iterator of names) {
       this.listOfNames.push(iterator);
     }
     return this.listOfNames;
   }
+
 }
