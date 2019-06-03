@@ -1,0 +1,16 @@
+<div class="form-group">
+  
+ 
+  <h1>Names</h1>
+  <input type="text" #newName placeholder="New name..." />
+  <button type="button" class="addButton" (click)="addName(newName.value); newName.value=''">ADD</button>
+  <br>
+    <h3>Names:</h3>
+    <ul >
+      <li *ngFor="let name of names">
+        {{name | letterToUpperCase}}
+        <button class="delete"  (click)="deleteName(name)">&#10005;</button>
+      </li>
+    </ul>
+   
+</div>

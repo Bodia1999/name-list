@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Arial';
+  
+}
+th {
+  width: 30%;
+}
+
+td {
+  min-width: 10px;
+}
+
+input[type=text] {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+div {
+  width: 250px;
+}
+
+
+
+button[type=button] {
+  background-color: black;
+  color: white;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+li {
+  margin-bottom: 10px;
+}

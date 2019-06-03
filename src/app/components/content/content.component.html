@@ -1,0 +1,13 @@
+<div>
+  <h1>Sort by:</h1>
+  <select class="custom-select" #t (change)="onChange(t.value)">
+  <option selected value="ASC">ASC</option>
+  <option value="DESC">DESC</option>
+  </select><br>
+  <ul >
+    <li *ngFor="let name of array">
+      {{name | letterToUpperCase}}
+      <!-- <button class="delete" class="btn btn-primary" (click)="deleteName(name)">&#10005;</button>
+     --></li>
+  </ul>
+</div>
